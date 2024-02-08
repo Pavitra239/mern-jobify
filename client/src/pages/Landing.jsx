@@ -1,7 +1,7 @@
-import Wrapper from "../assets/wrappers/LandingPage";
-import main from "../assets/images/main.svg";
-import { Link } from "react-router-dom";
-import { Logo } from "../components";
+import Wrapper from '../assets/wrappers/LandingPage';
+import main from '../assets/images/main.svg';
+import { Link } from 'react-router-dom';
+import { Logo } from '../components';
 const Landing = () => {
   return (
     <Wrapper>
@@ -11,7 +11,7 @@ const Landing = () => {
       <div className="container page">
         <div className="info">
           <h1>
-            Job <span>tracking</span> App
+            Demo <span>tracking</span> App
           </h1>
           <p>
             I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
