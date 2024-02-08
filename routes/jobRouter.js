@@ -1,31 +1,29 @@
-import { Router } from 'express';
+import { Router } from "express";
 const router = Router();
+
 import {
   getAllJobs,
-  getJob,
   createJob,
+  getJob,
   updateJob,
   deleteJob,
   showStats,
-} from '../controllers/jobController.js';
+} from "../controllers/jobController.js";
 import {
-  validateJobInput,
   validateIdParam,
-} from '../middleware/validationMiddleware.js';
-import { checkForTestUser } from '../middleware/authMiddleware.js';
-
-// router.get('/',getAllJobs)
-// router.post('/',createJob)
+  validateJobInput,
+} from "../middlewares/validationMiddleware.js";
+import { checkForTestUser } from "../middlewares/authMiddleware.js";
 
 router
-  .route('/')
+  .route("/")
   .get(getAllJobs)
   .post(checkForTestUser, validateJobInput, createJob);
 
-router.route('/stats').get(showStats);
+router.route("/stats").get(showStats);
 
 router
-  .route('/:id')
+  .route("/:id")
   .get(validateIdParam, getJob)
   .patch(checkForTestUser, validateJobInput, validateIdParam, updateJob)
   .delete(checkForTestUser, validateIdParam, deleteJob);
